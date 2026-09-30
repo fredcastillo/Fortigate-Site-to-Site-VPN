@@ -1,0 +1,216 @@
+# Extracto de running-config consultado de FortiGate-A
+# No representa el full-configuration; contiene las secciones que fueron verificadas.
+
+FortiGate-A # show system interface
+config system interface
+    edit "port1"
+        set vdom "root"
+        set ip 203.0.113.21 255.255.255.252
+        set allowaccess ping
+        set type physical
+        set snmp-index 1
+    next
+    edit "port2"
+        set vdom "root"
+        set ip 10.21.75.1 255.255.255.128
+        set allowaccess ping https http
+        set type physical
+        set snmp-index 2
+    next
+    edit "port3"
+        set vdom "root"
+        set type physical
+        set snmp-index 3
+    next
+    edit "port4"
+        set vdom "root"
+        set type physical
+        set snmp-index 4
+    next
+    edit "port5"
+        set vdom "root"
+        set type physical
+        set snmp-index 5
+    next
+    edit "port6"
+        set vdom "root"
+        set type physical
+        set snmp-index 6
+    next
+    edit "port7"
+        set vdom "root"
+        set type physical
+        set snmp-index 7
+    next
+    edit "port8"
+        set vdom "root"
+        set type physical
+        set snmp-index 8
+    next
+    edit "port9"
+        set vdom "root"
+        set type physical
+        set snmp-index 9
+    next
+    edit "port10"
+        set vdom "root"
+        set type physical
+        set snmp-index 10
+    next
+    edit "naf.root"
+        set vdom "root"
+        set type tunnel
+        set src-check disable
+        set snmp-index 11
+    next
+    edit "l2t.root"
+        set vdom "root"
+        set type tunnel
+        set snmp-index 12
+    next
+    edit "ssl.root"
+        set vdom "root"
+        set type tunnel
+        set alias "SSL VPN interface"
+        set snmp-index 13
+    next
+    edit "fortilink"
+        set vdom "root"
+        set fortilink enable
+        set ip 10.255.1.1 255.255.255.0
+        set allowaccess ping fabric
+        set type aggregate
+        set lldp-reception enable
+        set lldp-transmission enable
+        set snmp-index 14
+    next
+    edit "VPN-TO-SITE-B"
+        set vdom "root"
+        set type tunnel
+        set snmp-index 15
+        set interface "port1"
+    next
+end
+
+FortiGate-A # show system dhcp server
+config system dhcp server
+    edit 1
+        set ntp-service local
+        set default-gateway 10.255.1.1
+        set netmask 255.255.255.0
+        set interface "fortilink"
+        config ip-range
+            edit 1
+                set start-ip 10.255.1.2
+                set end-ip 10.255.1.254
+            next
+        end
+        set vci-match enable
+        set vci-string "FortiSwitch" "FortiExtender"
+    next
+    edit 2
+        set dns-service default
+        set default-gateway 10.21.75.1
+        set netmask 255.255.255.128
+        set interface "port2"
+        config ip-range
+            edit 1
+                set start-ip 10.21.75.10
+                set end-ip 10.21.75.100
+            next
+        end
+    next
+end
+
+FortiGate-A # show router static
+config router static
+    edit 1
+        set gateway 203.0.113.22
+        set device "port1"
+    next
+    edit 2
+        set dst 10.21.75.128 255.255.255.240
+        set device "VPN-TO-SITE-B"
+    next
+end
+
+FortiGate-A # show firewall address
+config firewall address
+    edit "LAN_USUARIOS"
+        set uuid 61c331b0-bc94-51f1-46f6-aedd254e7f0c
+        set associated-interface "port2"
+        set subnet 10.21.75.0 255.255.255.128
+    next
+    edit "LAN_SERVIDOR"
+        set uuid ba936e9a-bc94-51f1-22d3-ef955b663c51
+        set associated-interface "VPN-TO-SITE-B"
+        set subnet 10.21.75.128 255.255.255.240
+    next
+end
+
+FortiGate-A # show firewall policy
+config firewall policy
+    edit 1
+        set name "LAN -> VPN"
+        set uuid d1c27f20-bc94-51f1-3f50-a778fc33c8c5
+        set srcintf "port2"
+        set dstintf "VPN-TO-SITE-B"
+        set action accept
+        set srcaddr "LAN_USUARIOS"
+        set dstaddr "LAN_SERVIDOR"
+        set schedule "always"
+        set service "ALL"
+    next
+    edit 2
+        set name "VPN -> LAN"
+        set uuid 1cf3406a-bc95-51f1-a4ea-edd28037d221
+        set srcintf "VPN-TO-SITE-B"
+        set dstintf "port2"
+        set action accept
+        set srcaddr "LAN_SERVIDOR"
+        set dstaddr "LAN_USUARIOS"
+        set schedule "always"
+        set service "ALL"
+    next
+    edit 3
+        set name "USUARIOS_A_INTERNET"
+        set uuid de8c47e8-bc9b-51f1-bba1-6ae5aba1d492
+        set srcintf "port2"
+        set dstintf "port1"
+        set action accept
+        set srcaddr "LAN_USUARIOS"
+        set dstaddr "all"
+        set schedule "always"
+        set service "ALL"
+        set nat enable
+    next
+end
+
+FortiGate-A # show vpn ipsec phase1-interface
+config vpn ipsec phase1-interface
+    edit "VPN-TO-SITE-B"
+        set interface "port1"
+        set ike-version 2
+        set peertype any
+        set net-device disable
+        set proposal des-sha256
+        set dhgrp 14
+        set remote-gw 203.0.113.26
+        set psksecret ENC [ENCRYPTED-BY-FORTIOS]
+    next
+end
+
+FortiGate-A # show vpn ipsec phase2-interface
+config vpn ipsec phase2-interface
+    edit "VPN-TO-SITE-B"
+        set phase1name "VPN-TO-SITE-B"
+        set proposal des-md5 des-sha1
+        set src-subnet 10.21.75.0 255.255.255.128
+        set dst-subnet 10.21.75.128 255.255.255.240
+    next
+end
+
+# Nota de documentación
+# La configuración objetivo documentada para la práctica utiliza DES-SHA256 en Phase 2.
+# La salida consultada anteriormente mostró otra proposal; esta diferencia queda registrada
+# en internal/REVISION_INTERNA_NO_SUBIR.md para corregirse antes de subir el running-config final.

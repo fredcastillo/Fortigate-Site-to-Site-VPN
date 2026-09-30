@@ -1,0 +1,18 @@
+# FortiGate — comandos de consulta/verificación utilizados
+show system interface
+show system dhcp server
+show router static
+show firewall address
+show firewall policy
+show vpn ipsec phase1-interface
+show vpn ipsec phase2-interface
+diagnose vpn ike gateway list
+diagnose vpn tunnel list
+
+# Router-ISP
+show running-config
+show ip interface brief
+show ip route
+
+# Switch-A
+show running-config

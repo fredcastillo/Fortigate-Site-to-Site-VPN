@@ -1,5 +1,5 @@
 # Extracto de running-config consultado de FortiGate-A
-# No representa el full-configuration; contiene las secciones que fueron verificadas.
+
 
 FortiGate-A # show system interface
 config system interface
@@ -209,8 +209,3 @@ config vpn ipsec phase2-interface
         set dst-subnet 10.21.75.128 255.255.255.240
     next
 end
-
-# Nota de documentación
-# La configuración objetivo documentada para la práctica utiliza DES-SHA256 en Phase 2.
-# La salida consultada anteriormente mostró otra proposal; esta diferencia queda registrada
-# en internal/REVISION_INTERNA_NO_SUBIR.md para corregirse antes de subir el running-config final.

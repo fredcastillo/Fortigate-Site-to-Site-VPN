@@ -1,5 +1,3 @@
-# Extracto de running-config consultado de FortiGate-B
-# No representa el full-configuration; contiene las secciones que fueron verificadas.
 
 FortiGate-B # show system interface
 config system interface

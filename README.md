@@ -1,12 +1,19 @@
-# 🔐 FortiGate Site-to-Site IPsec VPN — Infraestructura 1
+<h1 align="center">🔐 VPN Site-to-Site IPsec FortiGate</h1>
+
+<p align="center">
+  <a href="https://github.com/fredcastillo/fortigate-site-to-site-vpn"><img src="https://img.shields.io/badge/Laboratorio-GNS3-7d5fff?style=for-the-badge" alt="GNS3"></a>
+  <a href="https://github.com/fredcastillo/fortigate-site-to-site-vpn"><img src="https://img.shields.io/badge/Firewalls-FortiGate%20A%20y%20B-e11d48?style=for-the-badge" alt="FortiGate"></a>
+  <a href="https://github.com/fredcastillo/fortigate-site-to-site-vpn"><img src="https://img.shields.io/badge/FortiOS-v7.0.9-EE3124?style=for-the-badge" alt="FortiOS"></a>
+  <a href="https://github.com/fredcastillo/fortigate-site-to-site-vpn"><img src="https://img.shields.io/badge/VPN-IPsec%20Site--to--Site%20%7C%20IKEv2-9C27B0?style=for-the-badge" alt="VPN"></a>
+  <a href="https://github.com/fredcastillo/fortigate-site-to-site-vpn"><img src="https://img.shields.io/badge/Características-NAT%20%7C%20DHCP%20%7C%20VLAN%2010-FF6F00?style=for-the-badge" alt="Características"></a>
+  <a href="https://github.com/fredcastillo/fortigate-site-to-site-vpn"><img src="https://img.shields.io/badge/Estado-Completado-brightgreen?style=for-the-badge" alt="Estado"></a>
+</p>
 
 > **Seguridad de Redes · GNS3 · FortiOS v7.0.9**
 
 ## 🎥 Video demostrativo
 
-**Video:** [▶ Ver demostración en YouTube](video/VIDEO.md)
-
-> El enlace final de YouTube se colocará en `video/VIDEO.md` y también aquí, en la parte superior del repositorio, tal como exige la asignación.
+**Video:** [▶ Ver demostración en YouTube]((https://www.youtube.com/watch?v=bi5LRA3CluY))
 
 **Estudiante:** Fred Sneyder Castillo Apolinar  
 **Matrícula:** 2025-2175  
@@ -14,7 +21,7 @@
 **Asignatura:** Seguridad de Redes  
 **Entorno:** GNS3  
 **FortiOS:** v7.0.9  
-**VPN:** IPsec Site-to-Site, modo Custom
+**VPN:** IPsec Site-to-Site
 
 ---
 
@@ -33,7 +40,7 @@ El objetivo funcional de la práctica es que el usuario del Sitio A pueda comuni
 
 ---
 
-## 🎯 Objetivos
+## Objetivos
 
 ### Objetivo principal
 
@@ -132,8 +139,6 @@ graph LR
 | Local Selector | `10.21.75.128/28` |
 | Remote Selector | `10.21.75.0/25` |
 | Proposal Phase 2 | `DES-SHA256` |
-
-> La **PSK no se publica** en el repositorio público. Se mantiene fuera de GitHub por seguridad.
 
 ![Configuración VPN FortiGate-A](images/02-vpn-fortigate-a.png)
 
@@ -245,8 +250,6 @@ Se ejecuta traceroute desde la red de usuarios hacia el servidor para demostrar 
 
 ## 📸 Evidencias
 
-El repositorio mantiene un conjunto reducido de evidencias, orientado a demostrar los requisitos principales sin saturar la documentación.
-
 | Archivo | Evidencia |
 |---|---|
 | `01-topology-gns3.png` | Topología real en GNS3 |
@@ -260,8 +263,6 @@ El repositorio mantiene un conjunto reducido de evidencias, orientado a demostra
 | `09-connectivity-vpn-down.png` | Comunicación con VPN inactiva |
 | `10-traceroute.png` | Traceroute |
 
-Las referencias ya están colocadas en los documentos. Al guardar las futuras capturas con estos nombres dentro de `images/`, aparecerán automáticamente en GitHub.
-
 ---
 
 ## 📂 Running-Configs
@@ -273,8 +274,6 @@ Los archivos de configuración disponibles se encuentran en `configs/`:
 - [Router-ISP — running-config](configs/Router-ISP/running-config.txt)
 - [Switch-A — running-config](configs/Switch-A/running-config.txt)
 
-> Para los FortiGate se conservaron las salidas de consulta que fueron compartidas durante la reconstrucción del laboratorio; no se presenta como “full configuration” aquello que no fue proporcionado.
-
 ---
 
 ## 📜 Scripts y comandos
@@ -285,14 +284,6 @@ La CLI se utilizó únicamente para la inicialización necesaria de interfaces/a
 
 - [Scripts y notas](scripts/README.md)
 - [Comandos de verificación](scripts/verification-commands.txt)
-
----
-
-## 🎥 Video
-
-El video demostrativo tiene una duración máxima de 10 minutos y está orientado exclusivamente a demostrar el objetivo funcional y de seguridad de la infraestructura.
-
-- [Guion del video y enlace final](video/VIDEO.md)
 
 ---
 

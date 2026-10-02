@@ -9,19 +9,19 @@
   <a href="https://github.com/fredcastillo/fortigate-site-to-site-vpn"><img src="https://img.shields.io/badge/Estado-Completado-brightgreen?style=for-the-badge" alt="Estado"></a>
 </p>
 
-> **Seguridad de Redes · GNS3 · FortiOS v7.0.9**
+<p align="center">
+  
+> **Seguridad de Redes · GNS3 · FortiOS v7.0.9** | **Estudiante:** Fred Sneyder Castillo Apolinar | **Matrícula:** 2025-2175 |
+
+</p>
 
 ## 🎥 Video demostrativo
 
-**Video:** [▶ Ver demostración en YouTube]((https://www.youtube.com/watch?v=bi5LRA3CluY))
-
-**Estudiante:** Fred Sneyder Castillo Apolinar  
-**Matrícula:** 2025-2175  
-**Infraestructura:** 1  
-**Asignatura:** Seguridad de Redes  
-**Entorno:** GNS3  
-**FortiOS:** v7.0.9  
-**VPN:** IPsec Site-to-Site
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=bi5LRA3CluY">
+    <img src="https://img.youtube.com/vi/bi5LRA3CluY/maxresdefault.jpg" alt="Ver video" width="700">
+  </a>
+</div>
 
 ---
 
@@ -316,7 +316,13 @@ FortiGate-Site-to-Site-VPN/
 
 ---
 
-## 👤 Autor
+## 👨‍💻 Autor
 
-**Fred Sneyder Castillo Apolinar**  
-Matrícula: **2025-2175**
+**Fred Castillo**  
+*Estudiante de Tecnólogo en Seguridad Informática*  
+*Aspirante a Red Team | Seguridad Ofensiva*
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Fred%20Castillo-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/fredcastillo11/)
+[![GitHub](https://img.shields.io/badge/GitHub-fredcastillo-100000?style=for-the-badge&logo=github)](https://github.com/fredcastillo)
+
+---

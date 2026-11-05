@@ -150,7 +150,3 @@ config vpn ipsec phase1-interface
         set psksecret ENC [ENCRYPTED-BY-FORTIOS]
     next
 end
-
-# Nota
-# La policy completa de FortiGate-B y Phase 2 final se conservarán en el repositorio
-# cuando se incorpore la salida final de show firewall policy / show vpn ipsec phase2-interface.

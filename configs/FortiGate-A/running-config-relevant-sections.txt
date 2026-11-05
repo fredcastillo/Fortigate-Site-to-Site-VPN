@@ -202,7 +202,7 @@ FortiGate-A # show vpn ipsec phase2-interface
 config vpn ipsec phase2-interface
     edit "VPN-TO-SITE-B"
         set phase1name "VPN-TO-SITE-B"
-        set proposal des-md5 des-sha1
+        set proposal des-md5 des-sha256
         set src-subnet 10.21.75.0 255.255.255.128
         set dst-subnet 10.21.75.128 255.255.255.240
     next
